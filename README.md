@@ -13,8 +13,8 @@ Installation
 To build the CRX, open the Chrome extensions tab (type: `chrome://extensions` 
 into the address bar) and check developer options.
 
-Click on `Pack Extension..` and navigate to the src directory of the git 
-repo. This will build a `src.crx` into the `britishisms` directory.
+Click on `Pack Extension...` button and navigate to the src directory of the 
+git repo. This will build a `src.crx` into the `britishisms` directory.
 
 You can then drag and drop the crx file onto the extensions tab and it will 
 add it to your extensions.
