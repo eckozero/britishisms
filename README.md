@@ -32,6 +32,5 @@ Special thanks to [@h2s](https://github.com/h2s/)'s [XKCD Substitutions]
 License
 -------
 
-Britishisms is released under the <a href="http://www.opensource.org/licences/MIT" target = "_blank">MIT Licence</a>
-[MIT License](http://www.opensource.org/licenses/MIT).
+Britishisms is released under the <a href="http://www.opensource.org/licenses/MIT" target = "_blank">MIT License</a>.
 
