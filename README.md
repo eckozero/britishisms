@@ -1,44 +1,27 @@
-XKCD Substitutions
-==================
+Britishisms
+===========
 
-[![Build Status](https://secure.travis-ci.org/h2s/xkcd-substitutions.png)](http://travis-ci.org/h2s/xkcd-substitutions)
+Chrome extension amending American-English words to British-English words.
 
-Chrome extension implementing [XKCD #1288](http://xkcd.com/1288/).
+This is an extension for a bit of fun, not to say that American English is 
+*incorrect* (they are, after all, **different languages**).
 
-[![XKCD #1288](http://imgs.xkcd.com/comics/substitutions.png)](http://xkcd.com/1288/)
 
 Installation
 ------------
 
-Available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/xkcd-substitutions/amdapaokcigffcdnfijbojoadjhjijoa).
-
-Alternatively, drag `XKCDSubstitutions.crx` onto `chrome://extensions`, which
+Alternatively, drag `Britishisms.crx` onto `chrome://extensions`, which
 you can open via Window > Extensions.
 
-Contributing
+
+Forked Code
 ------------
 
-Be sure to check your changes don't break any of the existing unit tests.
-
-```bash
-$ npm install .
-$ make test
-```
-
-Ideally, test-drive any changes to the behaviour of the code where possible.
-
-Contributors
-------------
-
-* [@lightswitch05](https://github.com/lightswitch05)
-* [@willglynn](https://github.com/willglynn)
-* [@toxicFork](https://github.com/toxicFork)
-
-Special thanks to [@hank](https://github.com/hank/)'s [Cloud To Butt
-Plus](https://github.com/hank/cloud-to-butt) extension, on which this is based.
+Special thanks to [@h2s](https://github.com/h2s/)'s [XKCD Substitutions]
+(https://github.com/h2s/xkcd-substitutions) extension, on which this is based.
 
 License
 -------
 
-XKCD Substitutions is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+Britishisms is released under the [MIT License](http://www.opensource.org/licenses/MIT).
 
