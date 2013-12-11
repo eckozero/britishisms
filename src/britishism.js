@@ -38,6 +38,10 @@ Britishism.prototype.transformText = function(text) {
 
   text = text.replace(/\bsidewalk\b/g, "pavement");
   text = text.replace(/\bSidewalk\b/g, "Pavement");
+  text = text.replace(/\bSIDEWALK\b/g, "PAVEMENT");
+
+  text = text.replace(/\bblud\b/g, "old bean");
+  text = text.replace(/\bBlud\b/g, "Old bean");
 
   text = text.replace(/\bjaywalking\b/g, "crossing the road");
   text = text.replace(/\bJaywalking\b/g, "Crossing the road");
@@ -46,6 +50,19 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bjaywalker\b/g, "person who crosses the road");
   text = text.replace(/\bJaywalker\b/g, "Person who crosses the road");
 
+  text = text.replace(/\bcolor\b/g, "colour");
+  text = text.replace(/\bColor\b/g, "Colour");
+  text = text.replace(/\bCOLOR\b/g, "COLOUR");
+
+  text = text.replace(/\bbillion\b/g, "thousand million");
+  text = text.replace(/\bbillions\b/g, "thousand millions");
+  text = text.replace(/\bBillion\b/g, "Thousand million");
+  text = text.replace(/\bBillions\b/g, "Thousand millions");
+
+  text = text.replace(/\bgray\b/g, "grey");
+
+
+  // Personal fun stuff below
   text = text.replace(/\biPod\b/g, "stupid hipster music player");
   text = text.replace(/\biPods\b/g, "stupid hipster music players");
   text = text.replace(/\bMac\b/g, "Stupid Hipster Computer");
