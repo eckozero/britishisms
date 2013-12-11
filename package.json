@@ -1,15 +1,15 @@
 {
-  "name"          : "xkcd-substitutions",
-  "description"   : "Chome Extension Implementing XKCD #1288",
-  "url"           : "https://github.com/h2s/xkcd-substitutions",
-  "keywords"      : ["xkcd"],
-  "author"        : "Henry Smith <henry@henrysmith.org>",
+  "name"          : "Britishisms",
+  "description"   : "British English in place of American English",
+  "url"           : "https://github.com/eckozero/britishism",
+  "keywords"      : ["British English"],
+  "author"        : "Paul Lenton (EckoZero)",
   "devDependencies": {
     "mocha": "1.14.0",
     "should": "2.0.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/h2s/xkcd-substitutions.git"
+    "url": "https://github.com/eckozero/britishism.git"
   }
 }

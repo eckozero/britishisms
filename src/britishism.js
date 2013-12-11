@@ -41,7 +41,19 @@ Britishism.prototype.transformText = function(text) {
 
   text = text.replace(/\bjaywalking\b/g, "crossing the road");
   text = text.replace(/\bJaywalking\b/g, "Crossing the road");
+  text = text.replace(/\bJaywalk\b/g, "Cross the road");
+  text = text.replace(/\bjaywalk\b/g, "cross the road");
+  text = text.replace(/\bjaywalker\b/g, "person who crosses the road");
+  text = text.replace(/\bJaywalker\b/g, "Person who crosses the road");
 
+  text = text.replace(/\biPod\b/g, "stupid hipster music player");
+  text = text.replace(/\biPods\b/g, "stupid hipster music players");
+  text = text.replace(/\bMac\b/g, "Stupid Hipster Computer");
+  text = text.replace(/\bMacbook\b/g, "Stupid Hipster Laptop");
+  text = text.replace(/\bMacBook\b/g, "Stupid Hipster Laptop");
+  text = text.replace(/\biMac\b/g, "Stupid Tiny Hipster Computer");
+  text = text.replace(/\biPhone\b/g, "stupid hipster phone");
+  text = text.replace(/\biPhones\b/g, "stupid hipster phones");
 
   return text;
 };
