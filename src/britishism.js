@@ -25,6 +25,7 @@ Britishism.prototype.traverse = function(node) {
 
 Britishism.prototype.transformText = function(text) {
 
+
   text = text.replace(/\baluminum\b/g, "aluminium");
   text = text.replace(/\bAluminum\b/g, "Aluminium");
   text = text.replace(/\bALUMINUM\b/g, "ALUMINIUM");
@@ -61,6 +62,50 @@ Britishism.prototype.transformText = function(text) {
 
   text = text.replace(/\bgray\b/g, "grey");
 
+  text = text.replace(/\bzip[- ]?code\b/g, "postcode");
+  text = text.replace(/\bZip[- ]?code\b/g, "Postcode");
+  text = text.replace(/\bZip[- ]?Code\b/g, "Postcode");
+
+  // Cars and roads
+  text = text.replace(/\bsedan\b/g, "saloon");
+  text = text.replace(/\bSedan\b/g, "Saloon");
+  text = text.replace(/\bSEDAN\b/g, "SALOON");
+
+  text = text.replace(/\bstation[- ]?wagon\b/g, "estate car");
+  text = text.replace(/\bStation[- ]?wagon\b//g, "Estate car");
+  text = text.replace(/\bStation[- ]?Wagon\b/g, "Estate Car");
+  text = text.replace(/\bSTATION[- ]?WAGON\b/g, "ESTATE CAR");
+
+  text = text.replace(/\b18[- ]?wheeler\b/g, "juggernaut");
+  text = text.replace(/\b18[- ]?Wheeler\b/g, "Juggernaut");
+
+  text = text.replace(/\bhighway\b/g, "motorway");
+  text = text.replace(/\bHighway\b/g, "Motorway");
+  text = text.replace(/\\HIGHWAY\b/g, "MOTORWAY");
+  text = text.replace(/\bfreeway\b/g, "motorway");
+  text = text.replace(/\bFreeway\b/g, "Motorway");
+  text = text.replace(/\bFREEWAY\b/g, "MOTORWAY");
+  text = text.replace(/\binterstate\b/g, "motorway");
+  text = text.replace(/\bInterstate\b/g, "Motorway");
+  text = text.replace(/\bINTERSTATE\b/g, "MOTORWAY");
+  text = text.replace(/\bexpressway\b/g, "motorway");
+  text = text.replace(/\bExpressway\b/g, "Motorway");
+  text = text.replace(/\bEXPRESSWAY\b/g, "MOTORWAY");
+
+  text = text.replace(/\bgasoline\b/g, "petrol");
+  text = text.replace(/\bGasoline\b/g, "Petrol");
+  text = text.replace(/\bGASOLINE\b/g, "PETROL");
+
+  text = text.replace(/\bstick[- ]?shift\b/g, "manual gearbox");
+  text = text.replace(/\bStick[- ]?shift\b/g, "Manual gearbox");
+  text = text.replace(/\bSTICK[- ]?SHIFT\b/g, "MANUAL GEARBOX");
+
+  // Word fragments (e.g. ize instead of ise)
+  // Not at the end of a word (e.g. realized --> realised)
+  text = text.replace(/ize\B/g, "ise");
+  // Specifically at the end of a word (e.g. realize --> realise)
+  text = text.replace(/[^Ss]ize\b/g, "ise");
+  text = text.replace(/izing\b/g, "ising");
 
   // Personal fun stuff below
   text = text.replace(/\biPod\b/g, "stupid hipster music player");
