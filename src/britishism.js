@@ -62,9 +62,10 @@ Britishism.prototype.transformText = function(text) {
 
   text = text.replace(/\bgray\b/g, "grey");
 
-  text = text.replace(/\bzip[- ]?code\b/g, "postcode");
-  text = text.replace(/\bZip[- ]?code\b/g, "Postcode");
-  text = text.replace(/\bZip[- ]?Code\b/g, "Postcode");
+  text = text.replace(/\bZIP[- ]?code\b/g, "postcode");
+  text = text.replace(/\bZIP[- ]?Code\b/g, "Postcode");
+  // Covers words such as "ZIP codes" and "ZIP coded"
+  text = text.replace(/\bZIP[- ]?code\B/g, "postcode");
 
   // Cars and roads
   text = text.replace(/\bsedan\b/g, "saloon");
@@ -72,7 +73,7 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bSEDAN\b/g, "SALOON");
 
   text = text.replace(/\bstation[- ]?wagon\b/g, "estate car");
-  text = text.replace(/\bStation[- ]?wagon\b//g, "Estate car");
+  text = text.replace(/\bStation[- ]?wagon\b/g, "Estate car");
   text = text.replace(/\bStation[- ]?Wagon\b/g, "Estate Car");
   text = text.replace(/\bSTATION[- ]?WAGON\b/g, "ESTATE CAR");
 
@@ -104,8 +105,20 @@ Britishism.prototype.transformText = function(text) {
   // Not at the end of a word (e.g. realized --> realised)
   text = text.replace(/ize\B/g, "ise");
   // Specifically at the end of a word (e.g. realize --> realise)
-  text = text.replace(/[^Ss]ize\b/g, "ise");
+  text = text.replace(/ize\b/g, "ise");
   text = text.replace(/izing\b/g, "ising");
+  // There's a regex for this but every time I try it breaks so the fix
+  // presented here is necessary but ugly
+  // the 'ize' in 'size' has been replaced with 'ise' already
+  text = text.replace(/\bSise\b/g, "Size");
+  text = text.replace(/\bsise\b/g, "size");
+  text = text.replace(/\bSises\b/g, "Sizes");
+  text = text.replace(/\bsises\b/g, "sizes");
+  text = text.replace(/\bRe[- ]?sise\b/g, "Resize");
+  text = text.replace(/\bre[- ]?sise\b/g, "resize");
+  text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
+  text = text.replace(/\bre[- ]?sises\b/g, "resizes");
+
 
   // Personal fun stuff below
   text = text.replace(/\biPod\b/g, "stupid hipster music player");
