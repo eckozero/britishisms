@@ -98,11 +98,15 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bGASOLINE\b/g, "PETROL");
 
   text = text.replace(/\bstick[- ]?shift\b/g, "manual gearbox");
+  text = text.replace(/\bstick[- ]?shifts\b/g, "manual gearboxes");
   text = text.replace(/\bStick[- ]?shift\b/g, "Manual gearbox");
+  text = text.replace(/\bStick[- ]?shifts\b/g, "Manual gearboxes");
   text = text.replace(/\bSTICK[- ]?SHIFT\b/g, "MANUAL GEARBOX");
+  text = text.replace(/\bSTICK[- ]?SHIFTS\b/g, "MANUAL GEARBOXES");
+
 
   // Word fragments (e.g. ize instead of ise)
-  // Not at the end of a word (e.g. realized --> realised)
+  // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
   text = text.replace(/ize\B/g, "ise");
   // Specifically at the end of a word (e.g. realize --> realise)
   text = text.replace(/ize\b/g, "ise");
@@ -118,6 +122,7 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bre[- ]?sise\b/g, "resize");
   text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
   text = text.replace(/\bre[- ]?sises\b/g, "resizes");
+  text = text.replace(/sise\B/g, "size");
 
 
   // Personal fun stuff below
