@@ -108,7 +108,7 @@ Britishism.prototype.transformText = function(text) {
 
   // Word fragments (e.g. ize instead of ise)
   // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
-  text = text.replace(/\b[^(Cit|cit)]\Bize\B/g, "ise");
+  text = text.replace(/\b[^((Cit|cit)|(S|s))]\Bize\B/g, "ise");
   // Specifically at the end of a word (e.g. realize --> realise)
   text = text.replace(/\Bize\b/g, "ise");
   text = text.replace(/\Bizing\b/g, "ising");
@@ -124,23 +124,9 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
   text = text.replace(/\bre[- ]?sises\b/g, "resizes");
 
-
-  // Personal fun stuff below
-  text = text.replace(/\biPod\b/g, "Stupid Hipster Music Player");
-  text = text.replace(/\biPods\b/g, "Stupid Hipster Music Players");
-  text = text.replace(/\bMac\b/g, "Stupid Hipster Computer");
-  text = text.replace(/\bMacbook\b/g, "Stupid Hipster Laptop");
-  text = text.replace(/\bMacBook\b/g, "Stupid Hipster Laptop");
-  text = text.replace(/\biMac\b/g, "Stupid Tiny Hipster Computer");
-  text = text.replace(/\biPhone\b/g, "Stupid Hipster Phone");
-  text = text.replace(/\biPhones\b/g, "Stupid Hipster Phones");
-  text = text.replace(/\biTunes\b/g, "Stupid Hipster Music Distribution Service");
-  text = text.replace(/\biPad\b/g, "Stupid Hipster Tablet Computer");
-
   return text;
 };
 
 if (typeof module !== 'undefined') {
   module.exports = Britishism;
 }
-
