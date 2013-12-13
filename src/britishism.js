@@ -31,6 +31,13 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bAluminum\b/g, "Aluminium");
   text = text.replace(/\bALUMINUM\b/g, "ALUMINIUM");
 
+  text = text.replace(/\bapartment\b/g, "flat");
+  text = text.replace(/\bApartment\b/g, "Flat");
+  text = text.replace(/\bAPARTMENT\b/g, "FLAT");
+  text = text.replace(/\bapartments\b/g, "flats");
+  text = text.replace(/\bApartments\b/g, "Flats");
+  text = text.replace(/\bAPARTMENTS\b/g, "FLATS");
+
   text = text.replace(/\bcookie\b/g, "biscuit");
   text = text.replace(/\bcookies\b/g, "biscuits");
   text = text.replace(/\bCookie\b/g, "Biscuit");
@@ -84,15 +91,28 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bhighway\b/g, "motorway");
   text = text.replace(/\bHighway\b/g, "Motorway");
   text = text.replace(/\\HIGHWAY\b/g, "MOTORWAY");
+  text = text.replace(/\bhighways\b/g, "motorways");
+  text = text.replace(/\bHighways\b/g, "Motorways");
+  text = text.replace(/\\HIGHWAYS\b/g, "MOTORWAYS");
   text = text.replace(/\bfreeway\b/g, "motorway");
   text = text.replace(/\bFreeway\b/g, "Motorway");
   text = text.replace(/\bFREEWAY\b/g, "MOTORWAY");
+  text = text.replace(/\bfreeways\b/g, "motorways");
+  text = text.replace(/\bFreeways\b/g, "Motorways");
+  text = text.replace(/\bFREEWAYS\b/g, "MOTORWAYS");
   text = text.replace(/\binterstate\b/g, "motorway");
   text = text.replace(/\bInterstate\b/g, "Motorway");
   text = text.replace(/\bINTERSTATE\b/g, "MOTORWAY");
+  text = text.replace(/\binterstates\b/g, "motorways");
+  text = text.replace(/\bInterstates\b/g, "Motorways");
+  text = text.replace(/\bINTERSTATES\b/g, "MOTORWAYS");
   text = text.replace(/\bexpressway\b/g, "motorway");
   text = text.replace(/\bExpressway\b/g, "Motorway");
   text = text.replace(/\bEXPRESSWAY\b/g, "MOTORWAY");
+  text = text.replace(/\bexpressways\b/g, "motorways");
+  text = text.replace(/\bExpressways\b/g, "Motorways");
+  text = text.replace(/\bEXPRESSWAYS\b/g, "MOTORWAYS");
+
 
   text = text.replace(/\bgasoline\b/g, "petrol");
   text = text.replace(/\bGasoline\b/g, "Petrol");
@@ -105,16 +125,21 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bSTICK[- ]?SHIFT\b/g, "MANUAL GEARBOX");
   text = text.replace(/\bSTICK[- ]?SHIFTS\b/g, "MANUAL GEARBOXES");
 
+  // Food and drink
+  
+
 
   // Word fragments (e.g. ize instead of ise)
   // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
-  text = text.replace(/\b[^((Cit|cit)|(S|s))]\Bize\B/g, "ise");
+  text = text.replace(/\b[^((Cit|cit)|(S|s))]?\Bize\B/g, "ise");
+  text = text.replace(/\b[^((Cit|cit)|(S|s))]?\Bize\b/g, "ise");
   // Specifically at the end of a word (e.g. realize --> realise)
   text = text.replace(/\Bize\b/g, "ise");
   text = text.replace(/\Bizing\b/g, "ising");
   // There's a regex for this but every time I try it breaks so the fix
   // presented here is necessary but ugly
   // the 'ize' in 'size' has been replaced with 'ise' already
+  /*
   text = text.replace(/\bSise\b/g, "Size");
   text = text.replace(/\bsise\b/g, "size");
   text = text.replace(/\bSises\b/g, "Sizes");
@@ -123,7 +148,8 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bre[- ]?sise\b/g, "resize");
   text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
   text = text.replace(/\bre[- ]?sises\b/g, "resizes");
-
+  */
+  
   return text;
 };
 
