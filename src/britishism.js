@@ -88,31 +88,14 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\b18[- ]?wheeler\b/g, "juggernaut");
   text = text.replace(/\b18[- ]?Wheeler\b/g, "Juggernaut");
 
-  text = text.replace(/\bhighway\b/g, "motorway");
-  text = text.replace(/\bHighway\b/g, "Motorway");
-  text = text.replace(/\\HIGHWAY\b/g, "MOTORWAY");
-  text = text.replace(/\bhighways\b/g, "motorways");
-  text = text.replace(/\bHighways\b/g, "Motorways");
-  text = text.replace(/\\HIGHWAYS\b/g, "MOTORWAYS");
-  text = text.replace(/\bfreeway\b/g, "motorway");
-  text = text.replace(/\bFreeway\b/g, "Motorway");
-  text = text.replace(/\bFREEWAY\b/g, "MOTORWAY");
-  text = text.replace(/\bfreeways\b/g, "motorways");
-  text = text.replace(/\bFreeways\b/g, "Motorways");
-  text = text.replace(/\bFREEWAYS\b/g, "MOTORWAYS");
-  text = text.replace(/\binterstate\b/g, "motorway");
-  text = text.replace(/\bInterstate\b/g, "Motorway");
-  text = text.replace(/\bINTERSTATE\b/g, "MOTORWAY");
-  text = text.replace(/\binterstates\b/g, "motorways");
-  text = text.replace(/\bInterstates\b/g, "Motorways");
-  text = text.replace(/\bINTERSTATES\b/g, "MOTORWAYS");
-  text = text.replace(/\bexpressway\b/g, "motorway");
-  text = text.replace(/\bExpressway\b/g, "Motorway");
-  text = text.replace(/\bEXPRESSWAY\b/g, "MOTORWAY");
-  text = text.replace(/\bexpressways\b/g, "motorways");
-  text = text.replace(/\bExpressways\b/g, "Motorways");
-  text = text.replace(/\bEXPRESSWAYS\b/g, "MOTORWAYS");
-
+  // Experimental regexps ahead...
+  text = text.replace(/\b(highway|freeway|interstate|expressway)\b/g, "motorway");
+  text = text.replace(/\b(highways|freeways|interstates|expressways)\b/g, "motorways");
+  text = text.replace(/\b(Highway|Freeway|Interstate|Expressway)\b/g, "Motorway");
+  text = text.replace(/\b(Highways|Freeways|Interstates|Expressways)\b/g, "Motorways");
+  text = text.replace(/\b(HIGHWAY|FREEWAY|INTERSTATE|EXPRESSWAY)\b/g, "MOTORWAY");
+  text = text.replace(/\b(HIGHWAYS|FREEWAYS|INTERSTATES|EXPRESSWAYS)\b/g, "MOTORWAY");
+  // End experimental regexps...
 
   text = text.replace(/\bgasoline\b/g, "petrol");
   text = text.replace(/\bGasoline\b/g, "Petrol");
@@ -136,19 +119,6 @@ Britishism.prototype.transformText = function(text) {
   // Specifically at the end of a word (e.g. realize --> realise)
   text = text.replace(/\Bize\b/g, "ise");
   text = text.replace(/\Bizing\b/g, "ising");
-  // There's a regex for this but every time I try it breaks so the fix
-  // presented here is necessary but ugly
-  // the 'ize' in 'size' has been replaced with 'ise' already
-  /*
-  text = text.replace(/\bSise\b/g, "Size");
-  text = text.replace(/\bsise\b/g, "size");
-  text = text.replace(/\bSises\b/g, "Sizes");
-  text = text.replace(/\bsises\b/g, "sizes");
-  text = text.replace(/\bRe[- ]?sise\b/g, "Resize");
-  text = text.replace(/\bre[- ]?sise\b/g, "resize");
-  text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
-  text = text.replace(/\bre[- ]?sises\b/g, "resizes");
-  */
   
   return text;
 };
