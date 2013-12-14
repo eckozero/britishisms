@@ -114,7 +114,7 @@ Britishism.prototype.transformText = function(text) {
 
   // Word fragments (e.g. ize instead of ise)
   // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
-  text = text.replace(/[^((Cit)|(cit)|(Se)|(se)|(Pr)|(pr)|(hes))]ize/g, function($0, $1) {return $0.slice(0,1) + "ise"});
+  text = text.replace(/[^((Cit)|(cit)|(Se)|(se)|(Pr)|(pr)|(hes)|(S)|(s))]ize/g, function($0, $1) {return $0.slice(0,1) + "ise"});
   // Specifically at the end of a word (e.g. realize --> realise)
   //text = text.replace(/\Bize\b/g, "ise");
   text = text.replace(/izing\b/g, "ising");
@@ -122,6 +122,7 @@ Britishism.prototype.transformText = function(text) {
   // presented here is necessary but ugly
   // UPDATE: Apparently there is not as JavaScript doesn't support negative look-behinds
   // the 'ize' in 'size' has been replaced with 'ise' already
+  /*
   text = text.replace(/\bSise\b/g, "Size");
   text = text.replace(/\bsise\b/g, "size");
   text = text.replace(/\bSises\b/g, "Sizes");
@@ -130,6 +131,7 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bre[- ]?sise\b/g, "resize");
   text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
   text = text.replace(/\bre[- ]?sises\b/g, "resizes");
+  */
 
 
   return text;
