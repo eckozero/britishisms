@@ -114,15 +114,24 @@ Britishism.prototype.transformText = function(text) {
 
   // Word fragments (e.g. ize instead of ise)
   // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
-  // Allows citizen and size through unchanged
-  text = text.replace(/\b[^((Cit|cit)|(S|s))]?\Bize\B/g, "ise");
-  text = text.replace(/\b[^((Cit|cit)|(S|s))]?ize\b/g, "ise");
-  text = text.replace(/\B[^(S|s)]?ize\B/g, "ise");
-  text = text.replace(/\B[^(S|s)]?ize\b/g, "ise");
+  text = text.replace(/[^(Cit)|(cit)|(Se)|(se)|(Pr)|(pr)|(hes)]ize\B/g, "ise");
   // Specifically at the end of a word (e.g. realize --> realise)
-  text = text.replace(/\Bize\b/g, "ise");
-  text = text.replace(/\B[^(S|s)]izing\b/g, "ising");
-  
+  text = text.replace(/ize\b/g, "ise");
+  text = text.replace(/izing\b/g, "ising");
+  // There's a regex for this but every time I try it breaks so the fix
+  // presented here is necessary but ugly
+  // UPDATE: Apparently there is not as JavaScript doesn't support negative look-behinds
+  // the 'ize' in 'size' has been replaced with 'ise' already
+  text = text.replace(/\bSise\b/g, "Size");
+  text = text.replace(/\bsise\b/g, "size");
+  text = text.replace(/\bSises\b/g, "Sizes");
+  text = text.replace(/\bsises\b/g, "sizes");
+  text = text.replace(/\bRe[- ]?sise\b/g, "Resize");
+  text = text.replace(/\bre[- ]?sise\b/g, "resize");
+  text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
+  text = text.replace(/\bre[- ]?sises\b/g, "resizes");
+
+
   return text;
 };
 
