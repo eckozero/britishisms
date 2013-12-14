@@ -114,9 +114,9 @@ Britishism.prototype.transformText = function(text) {
 
   // Word fragments (e.g. ize instead of ise)
   // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
-  text = text.replace(/[^(Cit)|(cit)|(Se)|(se)|(Pr)|(pr)|(hes)]ize\B/g, "ise");
+  text = text.replace(/[^((Cit)|(cit)|(Se)|(se)|(Pr)|(pr)|(hes))]ize/g, function($0, $1) {return $0.slice(0,1) + "ise"});
   // Specifically at the end of a word (e.g. realize --> realise)
-  text = text.replace(/ize\b/g, "ise");
+  //text = text.replace(/\Bize\b/g, "ise");
   text = text.replace(/izing\b/g, "ising");
   // There's a regex for this but every time I try it breaks so the fix
   // presented here is necessary but ugly
