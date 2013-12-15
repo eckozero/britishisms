@@ -109,8 +109,26 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bSTICK[- ]?SHIFTS\b/g, "MANUAL GEARBOXES");
 
   // Food and drink
-  
+  text = text.replace(/\bfries\b/g, "chips");
 
+  text = text.replace(/\bcandy\b/g, "sweets");
+
+  text = text.replace(/\bcandy[- ]?bar\b/g, "chocolate bar");
+
+  // Clothing
+  text = text.replace(/\bvest\b/g, "waistcoat");
+
+  text = text.replace(/\bsweater\b/g, "jumper");
+
+  text = text.replace(/\bsweater[- ]?vest\b/g, "tank top");
+
+  text = text.replace(/\bpanties\b/g, "knickers");
+
+  text = text.replace(/\bpantyhose\b/g, "tights");
+
+  text = text.replace(/\bsneakers\b/g, "trainers");
+
+  
 
   // Word fragments (e.g. ize instead of ise)
   // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
