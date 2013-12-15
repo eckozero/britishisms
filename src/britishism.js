@@ -88,6 +88,9 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\b18[- ]?wheeler\b/g, "juggernaut");
   text = text.replace(/\b18[- ]?Wheeler\b/g, "Juggernaut");
 
+  text = text.replace(/\bairplane\b/g, "aeroplane");
+  text = text.replace(/\bAirplane\b/g, "Aeroplane");
+
   // Experimental regexps ahead...
   text = text.replace(/\b(highway|freeway|interstate|expressway)\b/g, "motorway");
   text = text.replace(/\b(highways|freeways|interstates|expressways)\b/g, "motorways");
@@ -110,27 +113,33 @@ Britishism.prototype.transformText = function(text) {
 
   // Food and drink
   text = text.replace(/\bfries\b/g, "chips");
+  text = text.replace(/\bFrench[- ]?fries\b/g, "chips");
 
   text = text.replace(/\bcandy\b/g, "sweets");
+  text = text.replace(/\bCandy\b/g, "Sweets");
 
   text = text.replace(/\bcandy[- ]?bar\b/g, "chocolate bar");
+  text = text.replace(/\bCandy[- ]?bar\b/g, "Chocolate bar");
 
   // Clothing
-  text = text.replace(/\bvest\b/g, "waistcoat");
-
+  text = text.replace(/\bsweater[- ]?vest/gi, "Sleeveless Jumper");
   text = text.replace(/\bsweater\b/g, "jumper");
-
-  text = text.replace(/\bsweater[- ]?vest\b/g, "tank top");
-
+  text = text.replace(/\bSweater\b/g, "Jumper");
+  text = text.replace(/\bsweaters\b/g, "jumpers");
+  text = text.replace(/\bSweaters\b/g, "Jumpers");
+  text = text.replace(/\bvest\b/g, "waistcoat");
+  text = text.replace(/\bVest\b/g, "Waistcoat");
+  text = text.replace(/\bvests\b/g, "waistcoats");
+  text = text.replace(/\bVests\b/g, "Waistcoats");
   text = text.replace(/\bpanties\b/g, "knickers");
-
+  text = text.replace(/\bPanties\b/g, "Knickers");
   text = text.replace(/\bpantyhose\b/g, "tights");
-
+  text = text.replace(/\bPantyhose\b/g, "Tights");
   text = text.replace(/\bsneakers\b/g, "trainers");
-
+  text = text.replace(/\bSneakers\b/g, "Trainers");
 
   // Miscellany
-  text = text.replace(/\bThanksgiving\b/gi, "November 25th");
+  text = text.replace(/\bThanksgiving\b/gi, "Holiday about a month before Christmas");
 
 
   
