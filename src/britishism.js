@@ -128,6 +128,11 @@ Britishism.prototype.transformText = function(text) {
 
   text = text.replace(/\bsneakers\b/g, "trainers");
 
+
+  // Miscellany
+  text = text.replace(/\bThanksgiving\b/gi, "November 25th");
+
+
   
 
   // Word fragments (e.g. ize instead of ise)
