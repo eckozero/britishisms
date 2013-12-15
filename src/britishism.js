@@ -125,21 +125,6 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/[^(S)|(s)]izab/g, function($0, $1) {return $0.slice(0,1) + "isab"});
   //text = text.replace(/iza[^((ard)|(rr)|(z)|)]/g, function($0, $1) {return "isa" + $0.slice(0,1});
 
-  // There's a regex for this but every time I try it breaks so the fix
-  // presented here is necessary but ugly
-  // UPDATE: Apparently there is not as JavaScript doesn't support negative look-behinds
-  // the 'ize' in 'size' has been replaced with 'ise' already
-  /*
-  text = text.replace(/\bSise\b/g, "Size");
-  text = text.replace(/\bsise\b/g, "size");
-  text = text.replace(/\bSises\b/g, "Sizes");
-  text = text.replace(/\bsises\b/g, "sizes");
-  text = text.replace(/\bRe[- ]?sise\b/g, "Resize");
-  text = text.replace(/\bre[- ]?sise\b/g, "resize");
-  text = text.replace(/\bRe[- ]?sises\b/g, "Resizes");
-  text = text.replace(/\bre[- ]?sises\b/g, "resizes");
-  */
-
 
   return text;
 };
