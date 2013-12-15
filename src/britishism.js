@@ -114,10 +114,17 @@ Britishism.prototype.transformText = function(text) {
 
   // Word fragments (e.g. ize instead of ise)
   // Not at the end of a word (e.g. realized --> realised, realizes --> realises)
-  text = text.replace(/[^((Cit)|(cit)|(Se)|(se)|(Pr)|(pr)|(hes)|(S)|(s))]ize/g, function($0, $1) {return $0.slice(0,1) + "ise"});
+  text = text.replace(/[^((Cit)|(cit)|(Se)|(se)|(Pr)|(pr)|(S)|(s))]ize/g, function($0, $1) {return $0.slice(0,1) + "ise"});
+  text = text.replace(/(hes)ize/g, function($0, $1) {return $0.slice(0,3) + "ise"});
   // Specifically at the end of a word (e.g. realize --> realise)
   //text = text.replace(/\Bize\b/g, "ise");
-  text = text.replace(/izing\b/g, "ising");
+  text = text.replace(/[^((S)|(s))]izing/g, function($0, $1) {return $0.slice(0,1) + "ising"});
+  // Bizarre, lizard, pizazz, sizable
+  text = text.replace(/[^(b)|(B)|(P)|(p)|(S)|(s)|(l)|(L)]iza/g, function($0, $1) {return $0.slice(0,1) + "isa"});
+  text = text.replace(/izat/g, "isat");
+  text = text.replace(/[^(S)|(s)]izab/g, function($0, $1) {return $0.slice(0,1) + "isab"});
+  //text = text.replace(/iza[^((ard)|(rr)|(z)|)]/g, function($0, $1) {return "isa" + $0.slice(0,1});
+
   // There's a regex for this but every time I try it breaks so the fix
   // presented here is necessary but ugly
   // UPDATE: Apparently there is not as JavaScript doesn't support negative look-behinds
