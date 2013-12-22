@@ -189,6 +189,15 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bzucchini\b/g, "courgette");
   text = text.replace(/\bZUCCHINI\b/g, "COURGETTE");
   
+  text = text.replace(/\bSnow[- ]?[P|p]ea/g, "Mangetout");
+  text = text.replace(/\bsnow[- ]?pea/g, "mangetout");
+  
+  text = text.replace(/\bFish[- ]?[S|s]tick/g, "Fish finger");
+  text = text.replace(/\bfish[- ]?stick/g, "fish finger");
+  text = text.replace(/\bFISH[- ]?STICK/g, "FISH FINGER");
+  
+  
+  
   text = text.replace(/\bacetaminophen\b/gi, "Paracetamol");
 
 
