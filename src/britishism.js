@@ -72,8 +72,18 @@ Britishism.prototype.transformText = function(text) {
 
   text = text.replace(/\bZIP[- ]?code\b/g, "postcode");
   text = text.replace(/\bZIP[- ]?Code\b/g, "Postcode");
+  // Not commonly used as ZIP is an acronymn
+  text = text.replace(/\bzip[- ]?code\b/g, "postcode");
   // Covers words such as "ZIP codes" and "ZIP coded"
   text = text.replace(/\bZIP[- ]?code\B/g, "postcode");
+  // Covers non-capitals too...
+  text = text.replace(/\bzip[- ]?code\B/g, "postcode");
+  
+  text = text.replace(/\bMail\b/g, "Post");
+  text = text.replace(/\bmail\b/g, "post");
+  text = text.replace(/\bMAIL\b/g, "POST");
+  text = text.replace(/\bmail[- ]?box\b/gi, "Letter Box");
+  
 
   // Cars and roads
   text = text.replace(/\bsedan\b/g, "saloon");
@@ -87,9 +97,10 @@ Britishism.prototype.transformText = function(text) {
 
   text = text.replace(/\b18[- ]?wheeler\b/g, "juggernaut");
   text = text.replace(/\b18[- ]?Wheeler\b/g, "Juggernaut");
-
-  text = text.replace(/\bairplane\b/g, "aeroplane");
-  text = text.replace(/\bAirplane\b/g, "Aeroplane");
+  
+  text = text.replace(/\bWindshield/g, "Windscreen");
+  text = text.replace(/\bwindshield/g, "windscreen");
+  text = text.replace(/\bWINDSHIELD/g, "WINDSCREEN");
 
   // Experimental regexps ahead...
   text = text.replace(/\b(highway|freeway|interstate|expressway)\b/g, "motorway");
@@ -110,16 +121,77 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bStick[- ]?shifts\b/g, "Manual gearboxes");
   text = text.replace(/\bSTICK[- ]?SHIFT\b/g, "MANUAL GEARBOX");
   text = text.replace(/\bSTICK[- ]?SHIFTS\b/g, "MANUAL GEARBOXES");
+  
+  
+  // Aviation
+  text = text.replace(/\bAirplane\b/g, "Aeroplane");
+  text = text.replace(/\bairplane\b/g, "aeroplane");
+  text = text.replace(/\bAIRPLANE\b/g, "AEROPLANE");
+  
+  text = text.replace(/\bAirfoil\b/g, "Aerofoil");
+  text = text.replace(/\bairfoil\b/g, "aerofoil");
+  text = text.replace(/\bAIRFOIL\b/g, "AEROFOIL");
+  
+  // Tools & things
+  text = text.replace(/\bAllen[- ]?wrench\b/gi, "Allen key");
+  text = text.replace(/\bWrench\b/g, "spanner");
+  text = text.replace(/\bwrench\b/g, "Spanner");
+  text = text.replace(/\bWRENCH\b/g, "SPANNER");
+  
+  text = text.replace(/\bcookie[- ]?sheet\b/g, "baking tray");
+  text = text.replace(/\bbiscuit[- ]?sheet\b/g, "baking tray");
+  
+  text = text.replace(/\bCinder[- ]?[B|b]lock\b/g, "Breeze block");
+  text = text.replace(/\bcinder[- ]?[B|b]lock\b/g, "breeze block");
+  
+  text = text.replace(/\b[C|c]ylinder[- ]?[L|l]ock/g, "Yale lock");
+  text = text.replace(/\bCYLINDER[- ]LOCK/g, "YALE LOCK");
+  
+  text = text.replace(/\bLumber\b/g, "Timber");
+  text = text.replace(/\blumber\b/g, "timber");
+  text = text.replace(/\bLUMBER\b/g, "TIMBER");
+  
+  text = text.replace(/\balligator[- ]?clip\b/gi, "crocodile clip");
+  text = text.replace(/\bAlligator[- ]?[C|c]lip\b/g, "Crocodile clip");
+  
+  text = text.replace(/\bGround[- ]?[W|w]ire\b/g, "Earth wire");
+  text = text.replace(/\bground[- ]?wire\b/g, "earth wire");
 
-  // Food and drink
+
+  // Food and drink (and medication)
   text = text.replace(/\bfries\b/g, "chips");
   text = text.replace(/\bFrench[- ]?fries\b/g, "chips");
+  
+  text = text.replace(/\b[C|c]andy[- ]?[A|a]pple/g, "Toffee Apple");
 
   text = text.replace(/\bcandy\b/g, "sweets");
   text = text.replace(/\bCandy\b/g, "Sweets");
 
   text = text.replace(/\bcandy[- ]?bar\b/g, "chocolate bar");
-  text = text.replace(/\bCandy[- ]?bar\b/g, "Chocolate bar");
+  text = text.replace(/\bCandy[- ]?[B|b]ar\b/g, "Chocolate bar");
+  
+  text = text.replace(/\bPotato[- ]?[C|c]hip/g, "Crisp");
+  text = text.replace(/\bpotato[- ]?chip/g, "crisp");
+  
+  text = text.replace(/\bAnise\b/g, "Aniseed");
+  text = text.replace(/\banise\b/g, "aniseed");
+  text = text.replace(/\bANISE\b/g, "ANISEED");
+  
+  text = text.replace(/\bEggplant/g, "Aubergine");
+  text = text.replace(/\beggplant/g, "aubergine");
+  text = text.replace(/\bEGGPLANT/g, "AUBERGINE");
+  
+  text = text.replace(/\bBeet[s]?\b/g, "Beetroot");
+  text = text.replace(/\bbeet[s]?\b/g, "beetroot");
+  text = text.replace(/\bBEET[S]?\b/g, "BEETROOT");
+  
+  text = text.replace(/\bZucchini\b/g, "Courgette");
+  text = text.replace(/\bzucchini\b/g, "courgette");
+  text = text.replace(/\bZUCCHINI\b/g, "COURGETTE");
+  
+  text = text.replace(/\bacetaminophen\b/gi, "Paracetamol");
+
+
 
   // Clothing
   text = text.replace(/\bsweater[- ]?vest/gi, "Sleeveless Jumper");
@@ -135,12 +207,22 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\bPanties\b/g, "Knickers");
   text = text.replace(/\bpantyhose\b/g, "tights");
   text = text.replace(/\bPantyhose\b/g, "Tights");
+  text = text.replace(/\bpanty[- ]?hose\b/gi, "tights");
   text = text.replace(/\bsneakers\b/g, "trainers");
   text = text.replace(/\bSneakers\b/g, "Trainers");
+  text = text.replace(/\bZipper/g, "Zip");
+  text = text.replace(/\bzipper/g, "zip");
+  text = text.replace(/\bZIPPER/g, "ZIP");
+  text = text.replace(/\bWindbreaker/g, "Cagoule");
+  text = text.replace(/\bwindbreaker/g, "cagoule");
+  text = text.replace(/\bWINDBREAKER/g, "CAGOULE");
 
   // Miscellany
   text = text.replace(/\bThanksgiving\b/gi, "Holiday about a month before Christmas");
 
+  text = text.replace(/\bLumberjack\b/g, "Woodcutter");
+  text = text.replace(/\blumberjack\b/g, "woodcutter");
+  text = text.replace(/\bLUMBERJACK\b/g, "WOODCUTTER");
 
   
 
