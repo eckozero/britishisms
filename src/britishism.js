@@ -247,6 +247,10 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/izat/g, "isat");
   text = text.replace(/[^(S)|(s)]izab/g, function($0, $1) {return $0.slice(0,1) + "isab"});
   //text = text.replace(/iza[^((ard)|(rr)|(z)|)]/g, function($0, $1) {return "isa" + $0.slice(0,1});
+  text = text.replace(/yze/g, "yse");
+  text = text.replace(/YZE/g, "YSE");
+  
+  text = text.replace(/\Balog\b/g, "alogue");
 
 
   return text;
