@@ -233,6 +233,15 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/\blumberjack\b/g, "woodcutter");
   text = text.replace(/\bLUMBERJACK\b/g, "WOODCUTTER");
 
+  text = text.replace(/\bcenter/g, "centre");
+  text = text.replace(/\bCenter/g, "Centre");
+  text = text.replace(/\bCENTER/g, "CENTRE");
+  
+  text = text.replace(/\btheater/g, "theatre");
+  text = text.replace(/\bTheater/g, "Theatre");
+  text = text.replace(/\bTHEATER/g, "THEATRE");
+  
+  
   
 
   // Word fragments (e.g. ize instead of ise)
@@ -251,6 +260,8 @@ Britishism.prototype.transformText = function(text) {
   text = text.replace(/YZE/g, "YSE");
   
   text = text.replace(/\Balog\b/g, "alogue");
+  
+  text = text.replace(/\B[v|m|b]or\b/g, function($0, $1) {return $0.slice(0,1) + "our"});
 
 
   return text;
