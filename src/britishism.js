@@ -252,7 +252,7 @@ Britishism.prototype.transformText = function(text) {
   //text = text.replace(/\Bize\b/g, "ise");
   text = text.replace(/[^((S)|(s))]izing/g, function($0, $1) {return $0.slice(0,1) + "ising"});
   // Bizarre, lizard, pizazz, sizable
-  text = text.replace(/[^(b)|(B)|(P)|(p)|(S)|(s)|(l)|(L)]iza/g, function($0, $1) {return $0.slice(0,1) + "isa"});
+  text = text.replace(/[^(b)|(B)|(P)|(p)|(S)|(s)|(l)|(L)|(W)|(w)]iza/g, function($0, $1) {return $0.slice(0,1) + "isa"});
   text = text.replace(/izat/g, "isat");
   text = text.replace(/[^(S)|(s)]izab/g, function($0, $1) {return $0.slice(0,1) + "isab"});
   //text = text.replace(/iza[^((ard)|(rr)|(z)|)]/g, function($0, $1) {return "isa" + $0.slice(0,1});
@@ -261,7 +261,7 @@ Britishism.prototype.transformText = function(text) {
   
   text = text.replace(/\Balog\b/g, "alogue");
   
-  text = text.replace(/\B[v|m|b]or\b/g, function($0, $1) {return $0.slice(0,1) + "our"});
+  text = text.replace(/\B[v|m|b|l]or\b/g, function($0, $1) {return $0.slice(0,1) + "our"});
 
 
   return text;
